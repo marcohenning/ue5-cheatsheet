@@ -2,6 +2,8 @@
 
 ## Event OnPostLogin
 
+![event_login](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/4462ae77-4c8a-46ef-bf2d-10e42bd0d960)
+
 .h File
 ```cpp
 public:
@@ -20,6 +22,8 @@ void ExampleGameMode::PostLogin(APlayerController* NewPlayer)
 ```
 
 ## Event OnLogout
+
+![event_logout](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/9d22ba61-ce4b-425a-8ccd-d07075c84b76)
 
 .h File
 ```cpp

@@ -194,13 +194,14 @@ private:
 
 .cpp File
 ```cpp
+AActor* SpawnedActor;
 FVector Location;
 FRotator Rotation;
 FActorSpawnParameters SpawnParameters;
 
 if (ActorClass)
 {
-	GetWorld()->SpawnActor<AActor>(
+	SpawnedActor = GetWorld()->SpawnActor<AActor>(
 		ActorClass,               // Actor class
 		Location,                 // Spawn location
 		Rotation,                 // Spawn rotation

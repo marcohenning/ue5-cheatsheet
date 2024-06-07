@@ -4,7 +4,7 @@ A collection of the most important Unreal Engine 5 blueprint nodes translated in
 
 ## About
 
-This repository aims to help Unreal Engine 5 C++ beginners and people transitioning from blueprints to C++. It provides a collection of the most important blueprint nodes and shows sample C++ implementation for each of the nodes. If you're looking for a specific node, simply search this file by using the name of the blueprint node and, once found, click on the link to instantly jump to the correct section.
+This repository aims to help Unreal Engine 5 C++ beginners and people transitioning from blueprints to C++. It provides a collection of the most important blueprint nodes and shows sample C++ implementation for each of the nodes. If you're looking for a specific node, simply search this file by using the name of the blueprint node and, once found, click on the link to instantly jump to the corresponding section.
 
 ## Table of contents
 

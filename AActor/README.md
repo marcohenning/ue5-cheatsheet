@@ -1,25 +1,6 @@
 # AActor
 
-## Event Construct
-
-The constructor's name must be identical to the class name.
-
-.h File
-```cpp
-public:
-	// Constructor
-	AExampleActor();
-```
-
-.cpp File
-```cpp
-AExampleActor::AExampleActor()
-{
-	// Your code here...
-}
-```
-
-## Event Begin Play
+## Event BeginPlay
 
 .h File
 ```cpp
@@ -103,7 +84,7 @@ FTransform NewTransform(NewRotation, NewLocation, NewScale3D);
 ExampleActor->SetActorTransform(NewTransform);
 ```
 
-## Set Visibility
+## Set Actor Hidden In Game
 
 ```cpp
 AActor* ExampleActor;

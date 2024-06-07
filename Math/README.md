@@ -47,41 +47,27 @@ float Max = UKismetMathLibrary::FMax(A, B);
 ## Ceil
 
 ```cpp
-#include "Kismet/KismetMathLibrary.h"
-
 float A;
 
-int32 Result = UKismetMathLibrary::FCeil(A);
+int32 Result = FMath::CeilToInt(A);
 ```
 
 ## Floor
 
 ```cpp
-#include "Kismet/KismetMathLibrary.h"
-
 float A;
 
-int32 Result = UKismetMathLibrary::FFloor(A);
+int32 Result = FMath::FloorToInt(A);
 ```
 
-## Absolute (Int)
+## Absolute
 
 ```cpp
-#include "Kismet/KismetMathLibrary.h"
-
 int32 A;
+int32 Result1 = FMath::Abs(A);
 
-int32 Result = UKismetMathLibrary::Abs_Int(A);
-```
-
-## Absolute (Float)
-
-```cpp
-#include "Kismet/KismetMathLibrary.h"
-
-float A;
-
-float Result = UKismetMathLibrary::Abs(A);
+float B;
+float Result2 = FMath::Abs(B);
 ```
 
 ## Clamp

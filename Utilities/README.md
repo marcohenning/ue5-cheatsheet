@@ -55,12 +55,29 @@ APlayerCameraManager* PlayerCameraManager = UGameplayStatics::GetPlayerCameraMan
 
 ## Spawn Emitter at Location
 
+.h File
 ```cpp
+private:
+	// The emitter needs to be set in blueprint
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	UParticleSystem* ExampleEmitter;
 ```
 
-## Spawn Emitter Attached
-
+.cpp File
 ```cpp
+#include "Kismet/GameplayStatics.h"
+
+UParticleSystemComponent* SpawnedEmitter;
+FTransform SpawnTransform;
+
+if (ExampleEmitter)
+{
+	SpawnedEmitter = UGameplayStatics::SpawnEmitterAtLocation(
+		GetWorld(),        // World object
+		ExampleEmitter,    // Emitter
+		SpawnTransform     // Spawn transform
+	);
+}
 ```
 
 ## Line Trace By Channel
@@ -99,22 +116,55 @@ bool bHit = GetWorld()->LineTraceMultiByChannel(
 
 ## Get Actor Of Class
 
+.h File
 ```cpp
+private:
+	// The class needs to be set in blueprint
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<AActor> ActorClass;
+```
+
+.cpp File
+```cpp
+#include "Kismet/GameplayStatics.h"
+
+// First found actor
+AActor* Actor;
+
+if (ActorClass)
+{
+	Actor = UGameplayStatics::GetActorOfClass(
+		this,                               // World context object
+		ActorClass                          // Actor class
+	);
+}
 ```
 
 ## Get All Actors Of Class
 
+.h File
 ```cpp
+private:
+	// The class needs to be set in blueprint
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<AActor> ActorClass;
 ```
 
-## Get All Actors Of Class with Tag
-
+.cpp File
 ```cpp
-```
+#include "Kismet/GameplayStatics.h"
 
-## Get All Actors with Interface
+// Result will be stored here
+TArray<AActor*> Actors;
 
-```cpp
+if (ActorClass)
+{
+	UGameplayStatics::GetAllActorsOfClass(
+		this,                           // World context object
+		ActorClass,                     // Actor class
+		Actors                          // (Output) Result
+	);
+}
 ```
 
 ## Get All Actors with Tag
@@ -159,29 +209,57 @@ if (ActorClass)
 }
 ```
 
-## Spawn Sound 2D
-
-```cpp
-```
-
-## Spawn Sound at Location
-
-```cpp
-```
-
-## Spawn Sound Attached
-
-```cpp
-```
-
 ## Play Sound 2D
 
+.h File
 ```cpp
+private:
+	// The sound needs to be set in blueprint
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	USoundBase* ExampleSound;
+```
+
+.cpp File
+```cpp
+#include "Kismet/GameplayStatics.h"
+
+if (ExampleSound)
+{
+	UGameplayStatics::PlaySound2D(
+		this,                   // World context object
+		ExampleSound,           // Sound
+		1.0f,                   // Volume multiplier
+		1.0f                    // Pitch multiplier
+	);
+}
 ```
 
 ## Play Sound at Location
 
+.h File
 ```cpp
+private:
+	// The sound needs to be set in blueprint
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	USoundBase* ExampleSound;
+```
+
+.cpp File
+```cpp
+#include "Kismet/GameplayStatics.h"
+
+FVector Location;
+
+if (ExampleSound)
+{
+	UGameplayStatics::PlaySoundAtLocation(
+		this,                           // World context object
+		ExampleSound,                   // Sound
+		Location,                       // Location
+		1.0f,                           // Volume multiplier
+		1.0f                            // Pitch multiplier
+	);
+}
 ```
 
 ## Apply Damage
@@ -202,19 +280,26 @@ UGameplayStatics::ApplyDamage(
 );
 ```
 
-## Apply Point Damage
-
-```cpp
-```
-
 ## Apply Radial Damage
 
 ```cpp
-```
+#include "Kismet/GameplayStatics.h"
 
-## Apply Radial Damage with Falloff
+FVector Origin;
+AActor* DamageCauser;
+AController* EventInstigator;
 
-```cpp
+UGameplayStatics::ApplyRadialDamage(
+	this,                          // World context object
+	100.0f,                        // Damage amount
+	Origin,                        // Damage location
+	200.0f,                        // Damage radius
+	UDamageType::StaticClass(),    // Damage type
+	TArray<AActor*>(),             // Ignored actors
+	DamageCauser,                  // Damage causer
+	EventInstigator,               // Instigator
+	false                          // Do full damage?
+);
 ```
 
 ## Get Game Mode
@@ -299,12 +384,34 @@ UGameplayStatics::SetGamePaused(this, bPaused);
 
 ## Spawn Decal at Location
 
+.h File
 ```cpp
+private:
+	// The material needs to be set in blueprint
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	UMaterialInterface* ExampleMaterial;
 ```
 
-## Spawn Decal Attached
-
+.cpp File
 ```cpp
+#include "Kismet/GameplayStatics.h"
+
+UDecalComponent* SpawnedDecal;
+FVector Size;
+FVector Location;
+FRotator Rotation;
+
+if (ExampleMaterial)
+{
+	SpawnedDecal = UGameplayStatics::SpawnDecalAtLocation(
+		this,                 // World context object
+		ExampleMaterial,      // Decal material
+		Size,                 // Decal size
+		Location,             // Decal location
+		Rotation,             // Decal rotation
+		0.0f                  // Life span (0 = infinite)
+	);
+}
 ```
 
 ## Draw Debug Line

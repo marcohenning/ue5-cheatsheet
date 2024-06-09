@@ -2,11 +2,15 @@
 
 ## Delay
 
+![delay](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/2ed38a93-99ec-4c4b-b0be-3b9dd52a1926)
+
 There is no equivalent to the delay node in C++, so timers are used instead.
 If you want to execute code after a specific delay, put that code into a function and then start a timer with the desired delay.
 See: `Set Timer by Function Name`
 
 ## Print String
+
+![print_string](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/23c01a82-1284-4c52-8cc1-ae4b919e4890)
 
 Commonly used, but has a few minor differences to the blueprint node:
 
@@ -39,6 +43,8 @@ UKismetSystemLibrary::PrintString(
 
 ## Get Player Controller
 
+![get_player_controller](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/18f58b8b-86f1-482e-addb-15fb304b6c01)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -47,6 +53,8 @@ APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this
 
 ## Get Player Camera Manager
 
+![get_player_camera_manager](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/8e1d3d1a-1e1b-411e-9295-0c6cf55d34fd)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -54,6 +62,8 @@ APlayerCameraManager* PlayerCameraManager = UGameplayStatics::GetPlayerCameraMan
 ```
 
 ## Spawn Emitter at Location
+
+![spawn_emitter_at_location](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/6ecbed9d-961b-4953-993c-d48df3bb99ef)
 
 .h File
 ```cpp
@@ -82,6 +92,8 @@ if (ExampleEmitter)
 
 ## Line Trace By Channel
 
+![line_trace_by_channel](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/e7eb2f56-034d-4108-b261-f5f25e08a9fc)
+
 ```cpp
 FVector Start;
 FVector End;
@@ -99,6 +111,8 @@ bool bHit = GetWorld()->LineTraceSingleByChannel(
 
 ## Multi Line Trace By Channel
 
+![multi_line_trace_by_channel](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/55d5275e-21c2-4833-b7bd-beec07fab781)
+
 ```cpp
 FVector Start;
 FVector End;
@@ -115,6 +129,8 @@ bool bHit = GetWorld()->LineTraceMultiByChannel(
 ```
 
 ## Get Actor Of Class
+
+![get_actor_of_class](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/0d699f2c-8f28-41c5-beca-375b20d6d84e)
 
 .h File
 ```cpp
@@ -141,6 +157,8 @@ if (ActorClass)
 ```
 
 ## Get All Actors Of Class
+
+![get_all_actors_of_class](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/7541737c-afa4-457b-ab9c-870d8c2a19f0)
 
 .h File
 ```cpp
@@ -169,6 +187,8 @@ if (ActorClass)
 
 ## Get All Actors with Tag
 
+![get_all_actors_with_tag](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/d1cc4737-9fff-4539-819a-d9c31f118631)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -183,6 +203,8 @@ UGameplayStatics::GetAllActorsWithTag(
 ```
 
 ## Spawn Actor from Class
+
+![spawn_actor_from_class](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/6683dcff-7954-41ea-b6ae-c712fc7086ac)
 
 .h File
 ```cpp
@@ -212,6 +234,8 @@ if (ActorClass)
 
 ## Play Sound 2D
 
+![play_sound_2d](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/71ad88a6-e375-4a67-bf55-9788352f282a)
+
 .h File
 ```cpp
 private:
@@ -236,6 +260,8 @@ if (ExampleSound)
 ```
 
 ## Play Sound at Location
+
+![play_sound_at_location](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/6c02a8fa-e6aa-4095-9ed7-bf190787334d)
 
 .h File
 ```cpp
@@ -265,6 +291,8 @@ if (ExampleSound)
 
 ## Apply Damage
 
+![apply_damage](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/145bd299-a6b3-4f3f-a6b0-1595f3bfef5c)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -282,6 +310,8 @@ UGameplayStatics::ApplyDamage(
 ```
 
 ## Apply Radial Damage
+
+![apply_radial_damage](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/301f1027-7c78-48ed-9184-99f1f98912f5)
 
 ```cpp
 #include "Kismet/GameplayStatics.h"
@@ -305,6 +335,8 @@ UGameplayStatics::ApplyRadialDamage(
 
 ## Get Game Mode
 
+![get_game_mode](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/551eb2ec-e355-40f1-9806-cd8c4f5c125c)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -313,6 +345,8 @@ AGameModeBase* GameMode = UGameplayStatics::GetGameMode(this);
 
 ## Get Game State
 
+![get_game_state](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/f5ca4328-10be-4dc7-8020-40bbe4d66b7d)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -320,6 +354,8 @@ AGameStateBase* GameState = UGameplayStatics::GetGameState(this);
 ```
 
 ## Project World to Screen
+
+![project_world_to_screen](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/505ba30c-f055-43af-af9b-cd3baa6753b8)
 
 ```cpp
 #include "Kismet/GameplayStatics.h"
@@ -341,6 +377,8 @@ UGameplayStatics::ProjectWorldToScreen(
 ```
 
 ## Deproject Screen to World
+
+![deproject_screen_to_world](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/81d761bd-ca33-4885-aa1a-bb74ed88d65d)
 
 ```cpp
 #include "Kismet/GameplayStatics.h"
@@ -364,6 +402,8 @@ UGameplayStatics::DeprojectScreenToWorld(
 
 ## Open Level (by Name)
 
+![open_level_by_name](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/e8ff0289-3754-4a6b-b861-77dc69f343d7)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -375,6 +415,8 @@ UGameplayStatics::OpenLevel(
 
 ## Set Game Paused
 
+![set_game_paused](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/abb42c34-1413-46bc-891f-f3da7e545b37)
+
 ```cpp
 #include "Kismet/GameplayStatics.h"
 
@@ -384,6 +426,8 @@ UGameplayStatics::SetGamePaused(this, bPaused);
 ```
 
 ## Spawn Decal at Location
+
+![spawn_decal_at_location](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/da67d5a2-4401-42fd-a5f4-0bf8ffe6ae76)
 
 .h File
 ```cpp
@@ -417,6 +461,8 @@ if (ExampleMaterial)
 
 ## Draw Debug Line
 
+![draw_debug_line](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/ab590515-2e8d-41db-9d80-d91a60cbe587)
+
 ```cpp
 FVector Start;
 FVector End;
@@ -435,6 +481,8 @@ DrawDebugLine(
 
 ## Draw Debug Box
 
+![draw_debug_box](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/811d4bb0-9757-45a3-82f5-4ef4103e1d5b)
+
 ```cpp
 FVector Center;
 FVector Extent;
@@ -452,6 +500,8 @@ DrawDebugBox(
 ```
 
 ## Is Valid
+
+![is_valid](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/d057e400-dbcd-4120-b909-0915e16d0215)
 
 Not identical to the blueprint node but used in most cases:
 ```cpp
@@ -486,6 +536,8 @@ else
 ```
 
 ## Quit Game
+
+![quit_game](https://github.com/marcohenning/ue5-cheatsheet/assets/91918460/f980f272-75eb-46d6-958b-f2b0014a4afb)
 
 ```cpp
 #include "Kismet/GameplayStatics.h"
